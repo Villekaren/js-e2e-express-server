@@ -15,11 +15,7 @@ steps:
     versionSpec: '22.x'
   displayName: 'Install Node.js'
 
-- task: PowerShell@2
+- script: |
+    npm install
+    npm run build
   displayName: 'npm install and build'
-  inputs:
-    targetType: 'inline'
-    pwsh: true
-    script: |
-      npm install
-      npm run build
